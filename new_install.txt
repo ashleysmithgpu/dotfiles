@@ -1,0 +1,39 @@
+
+= fonts =
+
+Follow http://askubuntu.com/questions/283908/how-can-i-install-and-use-powerline-plugin
+
+```
+sudo apt-get install python-pip git
+pip install --user git+git://github.com/Lokaltog/powerline
+```
+
+Add `~/.local/bin` to `$PATH` by modifying `~/.profile` with your favourite editor:
+
+```
+gksudo gedit ~/.profile
+```
+
+and adding following lines at the end of it:
+
+```
+if [ -d "$HOME/.local/bin" ]; then
+	PATH="$HOME/.local/bin:$PATH"
+fi
+```
+
+```
+wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
+mkdir -p ~/.fonts/ && mv PowerlineSymbols.otf ~/.fonts/
+fc-cache -vf ~/.fonts
+mkdir -p ~/.config/fontconfig/conf.d/ && mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+```
+
+= configs =
+
+```
+ln /home/ash/dotfiles/vim/.vimrc ~/.vimrc
+ln /home/ash/dotfiles/vim/config.fish ~/.config/fish/config.fish
+ln /home/ash/dotfiles/tmux/.tmux.conf ~/.tmux.conf
+```
+
