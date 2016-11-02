@@ -1,4 +1,8 @@
 
+= vim =
+
+Use sudo apt-get install vim-gtk not vim (clipboard support not working)
+
 = fonts =
 
 Follow http://askubuntu.com/questions/283908/how-can-i-install-and-use-powerline-plugin
@@ -33,7 +37,7 @@ mkdir -p ~/.config/fontconfig/conf.d/ && mv 10-powerline-symbols.conf ~/.config/
 
 ```
 ln /home/ash/dotfiles/vim/.vimrc ~/.vimrc
-ln /home/ash/dotfiles/vim/config.fish ~/.config/fish/config.fish
+ln /home/ash/dotfiles/fish/config.fish ~/.config/fish/config.fish
 ln /home/ash/dotfiles/tmux/.tmux.conf ~/.tmux.conf
 ```
 

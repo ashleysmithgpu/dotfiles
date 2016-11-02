@@ -76,3 +76,12 @@ set relativenumber
 " Disable F1
 :nmap <F1> <nop>
 
+" Change search highight colour to something visible
+hi Search ctermfg=black ctermbg=white
+
+" Quick save session
+nnoremap <F5> :mksession! ~/.vim_session
+
+" Quick load session
+nnoremap <F6> :source ~/.vim_session
+
