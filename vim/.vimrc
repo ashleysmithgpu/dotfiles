@@ -85,3 +85,18 @@ nnoremap <F5> :mksession! ~/.vim_session
 " Quick load session
 nnoremap <F6> :source ~/.vim_session
 
+" Enable c++ syntax highlighting on shader files
+au BufReadPost *.vsh set syntax=c
+au BufReadPost *.fsh set syntax=c
+au BufReadPost *.ray set syntax=c
+au BufReadPost *.frag set syntax=c
+au BufReadPost *.vert set syntax=c
+au BufReadPost *.frame set syntax=c
+au BufReadPost *.comp set syntax=c
+
+" Persistant undo
+set undofile
+set undodir=$HOME/.vim/undo
+set undolevels=100000
+set undoreload=100000
+
