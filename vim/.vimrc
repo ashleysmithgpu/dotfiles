@@ -100,3 +100,8 @@ set undodir=$HOME/.vim/undo
 set undolevels=100000
 set undoreload=100000
 
+" Rust file types and syntax highlighting
+au BufRead,BufNewFile *.rs set filetype=rust
+
+
+
