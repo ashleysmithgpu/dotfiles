@@ -51,9 +51,6 @@ set hidden
 
 let g:airline_powerline_fonts=1
 
-" Make sure the status line shows the path
-set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim/
-
 " Always show statusline
 set laststatus=2
 

@@ -1,46 +1,51 @@
 
-= vim =
+= install =
 
-Use sudo apt-get install vim-gtk not vim (clipboard support not working)
+```
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo apt update
+sudo apt install neovim
+sudo apt install fish tmux
+```
+
+Set neovim as default:
+
+```
+sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
+```
 
 = fonts =
 
-Follow http://askubuntu.com/questions/283908/how-can-i-install-and-use-powerline-plugin
-
 ```
-sudo apt-get install python-pip git
-pip install --user git+git://github.com/Lokaltog/powerline
+sudo apt install powerline
 ```
 
-Add `~/.local/bin` to `$PATH` by modifying `~/.profile` with your favourite editor:
+= airline =
+
+Install:
 
 ```
-gksudo gedit ~/.profile
-```
-
-and adding following lines at the end of it:
-
-```
-if [ -d "$HOME/.local/bin" ]; then
-	PATH="$HOME/.local/bin:$PATH"
-fi
-```
-
-```
-wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
-mkdir -p ~/.fonts/ && mv PowerlineSymbols.otf ~/.fonts/
-fc-cache -vf ~/.fonts
-mkdir -p ~/.config/fontconfig/conf.d/ && mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+cd ~/.config/nvim
+git clone https://github.com/vim-airline/vim-airline.git
+cp -R vim-airline/plugin vim-airline/autoload .
+rm -r vim-airline
 ```
 
 = configs =
 
 ```
-ln /home/ash/dotfiles/vim/.vimrc ~/.vimrc
+mkdir ~/.config/nvim/
+ln /home/ash/dotfiles/vim/.vimrc ~/.config/nvim/init.vim
+mkdir ~/.config/fish/
 ln /home/ash/dotfiles/fish/config.fish ~/.config/fish/config.fish
 ln /home/ash/dotfiles/tmux/.tmux.conf ~/.tmux.conf
 ```
 
 = syntax =
 
-add https://raw.githubusercontent.com/rust-lang/rust.vim/master/syntax/rust.vim to ~/.vim/syntax
+```
+cd ~/.config/nvim
+mkdir syntax
+cd syntax
+wget https://raw.githubusercontent.com/rust-lang/rust.vim/master/syntax/rust.vim
+```
