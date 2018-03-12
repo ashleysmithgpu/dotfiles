@@ -2,22 +2,14 @@
 = install =
 
 ```
-sudo add-apt-repository ppa:neovim-ppa/stable
-sudo apt update
-sudo apt install neovim
-sudo apt install fish tmux
-```
-
-Set neovim as default:
-
-```
-sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
+sudo apt install neovim fish tmux xclip
 ```
 
 = fonts =
 
 ```
 sudo apt install powerline
+fc-cache -f -v
 ```
 
 = airline =
