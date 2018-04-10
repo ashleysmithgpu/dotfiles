@@ -40,4 +40,11 @@ cd ~/.config/nvim
 mkdir syntax
 cd syntax
 wget https://raw.githubusercontent.com/rust-lang/rust.vim/master/syntax/rust.vim
+wget https://raw.githubusercontent.com/tikhomirov/vim-glsl/master/syntax/glsl.vim
+wget https://raw.githubusercontent.com/beyondmarc/hlsl.vim/master/syntax/hlsl.vim
+mkdir ../ftdetect
+cd ../ftdetect
+wget https://github.com/rust-lang/rust.vim/raw/master/ftdetect/rust.vim
+wget https://github.com/tikhomirov/vim-glsl/raw/master/ftdetect/glsl.vim
+wget https://github.com/beyondmarc/hlsl.vim/raw/master/ftdetect/hlsl.vim
 ```
