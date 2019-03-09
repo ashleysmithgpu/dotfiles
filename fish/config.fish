@@ -15,3 +15,4 @@ set -x HISTSIZE
 
 powerline-setup
 
+alias vim nvim

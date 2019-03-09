@@ -2,7 +2,7 @@
 = install =
 
 ```
-sudo apt install neovim fish tmux xclip
+sudo apt install neovim fish tmux xclip git
 ```
 
 = fonts =
@@ -17,6 +17,7 @@ fc-cache -f -v
 Install:
 
 ```
+mkdir ~/.config/nvim
 cd ~/.config/nvim
 git clone https://github.com/vim-airline/vim-airline.git
 cp -R vim-airline/plugin vim-airline/autoload .
@@ -26,7 +27,6 @@ rm -r vim-airline
 = configs =
 
 ```
-mkdir ~/.config/nvim/
 ln /home/ash/dotfiles/vim/.vimrc ~/.config/nvim/init.vim
 mkdir ~/.config/fish/
 ln /home/ash/dotfiles/fish/config.fish ~/.config/fish/config.fish
