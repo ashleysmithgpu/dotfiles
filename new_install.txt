@@ -21,6 +21,8 @@ cd ~/.config/nvim
 git clone https://github.com/vim-airline/vim-airline.git
 cp -R vim-airline/plugin vim-airline/autoload .
 rm -r vim-airline
+cd ~/github/
+git clone https://github.com/tmux-plugins/tmux-resurrect
 ```
 
 = configs =
