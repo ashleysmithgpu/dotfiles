@@ -29,10 +29,10 @@ git clone https://github.com/tmux-plugins/tmux-resurrect
 = configs =
 
 ```
-ln /home/ash/dotfiles/vim/.vimrc ~/.config/nvim/init.vim
+ln /home/ash/github/dotfiles/vim/.vimrc ~/.config/nvim/init.vim
 mkdir ~/.config/fish/
-ln /home/ash/dotfiles/fish/config.fish ~/.config/fish/config.fish
-ln /home/ash/dotfiles/tmux/.tmux.conf ~/.tmux.conf
+ln /home/ash/github/dotfiles/fish/config.fish ~/.config/fish/config.fish
+ln /home/ash/github/dotfiles/tmux/.tmux.conf ~/.tmux.conf
 ```
 
 = syntax =
@@ -50,3 +50,12 @@ wget https://github.com/rust-lang/rust.vim/raw/master/ftdetect/rust.vim
 wget https://github.com/tikhomirov/vim-glsl/raw/master/ftdetect/glsl.vim
 wget https://github.com/beyondmarc/hlsl.vim/raw/master/ftdetect/hlsl.vim
 ```
+
+
+nvim lsp magic:
+use nvim >=0.5:
+	sudo apt remove nvim
+	sudo add-apt-repository ppa:neovim-ppa/unstable
+	sudo install nvim
+vim-plug shit:
+	https://www.chrisatmachine.com/Neovim/01-vim-plug/

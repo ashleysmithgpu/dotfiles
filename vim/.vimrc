@@ -103,4 +103,3 @@ au BufRead,BufNewFile *.rs set filetype=rust
 " Bug in neovim: No way to warn on file changes
 " this will reload the file automatically without asking
 au FocusGained * :checktime
-
