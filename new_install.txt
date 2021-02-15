@@ -64,8 +64,9 @@ vim-plug shit:
 = disable back button on mouse =
 /etc/udev/rules.d/10-custom-mouse.rules
 
-ATTRS{name}=="Kingsis Peripherals  Evoluent VerticalMouse 3", ACTION=="add", RUN+="/usr/bin/fix_fucking_mouse.sh"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="1a7c", ATTRS{idProduct}=="0068", ACTION=="bind", RUN+="/bin/sh -c '/usr/bin/fix_fucking_mouse.sh'"
 
+# NOTE: "bind" - run *after" xinput is fixed, "add" does not work
 
 
 
