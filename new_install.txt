@@ -100,3 +100,23 @@ https://askubuntu.com/questions/403766/duplicate-icons-for-manually-created-gnom
 copy icon:
 
 cp P4VResources/icons/p4v.svg ~/.local/share/icons/hicolor/scalable/apps/
+
+
+= Fix background with multiple monitors =
+
+```
+sudo apt install hydrapaper
+sudo vim /etc/udev/rules.d/99-set-background.rules
+
+KERNEL=="card0", SUBSYSTEM=="drm", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/ash/.Xauthority", RUN+="/usr/local/monitor_change.sh"
+
+sudo vim /usr/local/monitor_change.sh                                                                                                                                                               
+
+#!/bin/bash
+MONITORS=`su ash -c "dbus-send --session --print-reply --dest=org.gnome.Mutter.DisplayConfig /org/gnome/Mutter/DisplayConfig org.gnome.Mutter.DisplayConfig.GetCurrentState | grep -A1 display-name"`
+if echo "${MONITORS}" | grep -q "AOC 24"; then
+	su ash -c "hydrapaper -c /home/ash/Pictures/Desktop/nge1200.png /home/ash/Pictures/Desktop/nge16to9.png -m center_blur center_blur"
+else
+	su ash -c "hydrapaper -c /home/ash/Pictures/Desktop/nge1200.png -m center_blur"
+fi
+
